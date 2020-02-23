@@ -4,17 +4,17 @@ import guru.springframework.sfgdi.services.ConstructorGreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class PropertyInjectedControllerTest {
+class SetterInjectedControllerTest {
 
-    PropertyInjectedController controller;
+    SetterInjectedController controller;
 
     @BeforeEach
     void setUp() {
         // Creating Object
-        controller = new PropertyInjectedController();
+        controller = new SetterInjectedController();
 
-        // Injecting dependent property directly (DI - Property Injection)
-        controller.greetingService = new ConstructorGreetingServiceImpl();
+        // Injecting dependent property through Setter Injection (DI - Setter Injection)
+        controller.setGreetingService(new ConstructorGreetingServiceImpl());
     }
 
     @Test
